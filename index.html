@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>लोटस कॉम्प्युटर इन्स्टिट्यूट - गुगल रिव्ह्यू</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>लोटस कॉम्प्युटर इन्स्टिट्यूट आणि सीएससी सेंटर - अभिप्राय</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'Noto Sans Devanagari', sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
         body {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            background: radial-gradient(circle at top, #1e3a8a 0%, #0f172a 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -21,259 +22,355 @@
             padding: 16px;
             color: #1e293b;
         }
-        .card {
+        .container {
             background: #ffffff;
             width: 100%;
-            max-width: 460px;
-            border-radius: 20px;
-            padding: 24px 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            max-width: 440px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.5s ease-out;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .header {
+            background: linear-gradient(135deg, #0284c7, #1d4ed8);
+            padding: 24px 20px 22px;
             text-align: center;
-        }
-        .badge {
-            display: inline-block;
-            background: #fff3e0;
-            color: #e65100;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 50px;
-            margin-bottom: 10px;
-            border: 1px solid #ffcc80;
-        }
-        h1 {
-            font-size: 21px;
-            font-weight: 700;
-            color: #0f172a;
-            line-height: 1.3;
-        }
-        .sub {
-            font-size: 13px;
-            color: #64748b;
-            margin-top: 4px;
-        }
-        .stars {
-            font-size: 28px;
-            color: #f59e0b;
-            margin: 12px 0 6px;
-            letter-spacing: 3px;
-        }
-        .instruction {
-            font-size: 14px;
-            font-weight: 600;
-            color: #334155;
-            margin-bottom: 14px;
-        }
-        .review-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            text-align: left;
-            margin-bottom: 18px;
-        }
-        .review-option {
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 12px;
-            font-size: 14px;
-            line-height: 1.5;
-            color: #1e293b;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: #f8fafc;
+            color: #ffffff;
             position: relative;
         }
-        .review-option:hover {
-            border-color: #93c5fd;
-        }
-        .review-option.active {
-            border-color: #2563eb;
-            background: #eff6ff;
-            font-weight: 600;
-        }
-        .review-option.active::after {
-            content: "✓ निवडलेला रिव्ह्यू";
-            display: block;
+        .services-pill {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 4px 12px;
+            border-radius: 50px;
             font-size: 11px;
-            color: #2563eb;
-            margin-top: 4px;
             font-weight: 700;
+            letter-spacing: 0.3px;
+            margin-bottom: 10px;
+            color: #fef08a;
         }
-        .btn-main {
-            width: 100%;
-            background: linear-gradient(90deg, #16a34a, #15803d);
-            color: white;
-            border: none;
-            padding: 15px;
+        .header h1 {
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 1.35;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .header p {
+            font-size: 12.5px;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+        .stars-row {
+            margin-top: 12px;
+            display: inline-flex;
+            gap: 4px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 20px;
+            color: #fbbf24;
+        }
+        .content {
+            padding: 20px 18px 24px;
+        }
+        .prompt-box {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .prompt-title {
             font-size: 16px;
             font-weight: 700;
-            border-radius: 12px;
-            cursor: pointer;
-            box-shadow: 0 6px 15px rgba(22, 163, 74, 0.35);
-            transition: transform 0.15s;
+            color: #0f172a;
         }
-        .btn-main:active {
+        .prompt-sub {
+            font-size: 12.5px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+        .review-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .review-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 14px 15px;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .review-card:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(59, 130, 246, 0.15);
+        }
+        .review-card:active {
             transform: scale(0.98);
         }
-        .steps-box {
-            margin-top: 16px;
-            background: #fefce8;
-            border: 1px dashed #eab308;
-            border-radius: 12px;
-            padding: 12px;
+        .review-card.selected {
+            border-color: #16a34a;
+            background: #f0fdf4;
+        }
+        .review-text {
+            font-size: 13.8px;
+            line-height: 1.55;
+            color: #1e293b;
+            font-weight: 500;
+        }
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 8px;
+            margin-top: 2px;
+        }
+        .mini-stars {
+            color: #f59e0b;
             font-size: 13px;
-            color: #713f12;
-            text-align: left;
-            line-height: 1.6;
+            letter-spacing: 1px;
         }
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #0f172a;
-            color: #fff;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            display: none;
-            z-index: 999;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-            white-space: nowrap;
-        }
-        .admin-qr {
-            margin-top: 22px;
-            padding-top: 16px;
-            border-top: 1px solid #e2e8f0;
-        }
-        .admin-qr p {
-            font-size: 12px;
-            color: #64748b;
-            margin-bottom: 8px;
-        }
-        .admin-qr img {
-            width: 150px;
-            height: 150px;
-            border: 1px solid #cbd5e1;
-            border-radius: 10px;
-            padding: 6px;
-            background: #fff;
-        }
-        .btn-dl {
-            display: inline-block;
-            margin-top: 8px;
-            font-size: 13px;
-            color: #2563eb;
-            text-decoration: underline;
-            cursor: pointer;
-            background: none;
-            border: none;
+        .tap-badge {
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 11.5px;
             font-weight: 700;
+            padding: 4px 11px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+        }
+        .review-card.selected .tap-badge {
+            background: #16a34a;
+            box-shadow: 0 2px 6px rgba(22, 163, 74, 0.3);
+        }
+        .guide-footer {
+            margin-top: 18px;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 14px;
+            padding: 12px 14px;
+            font-size: 12.5px;
+            color: #92400e;
+            line-height: 1.55;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .guide-icon {
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+        /* कॉपी झाल्यानंतर दिसणारा आकर्षक ओव्हरले */
+        .redirect-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(6px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 1000;
+            animation: fadeIn 0.2s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .overlay-card {
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 28px 22px;
+            max-width: 340px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .check-circle {
+            width: 60px;
+            height: 60px;
+            background: #dcfce7;
+            color: #16a34a;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            margin: 0 auto 14px;
+            animation: pop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes pop {
+            0% { transform: scale(0.5); }
+            100% { transform: scale(1); }
+        }
+        .overlay-card h2 {
+            font-size: 19px;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+        .overlay-card p {
+            font-size: 13.5px;
+            color: #475569;
+            line-height: 1.5;
+        }
+        .loader-bar {
+            width: 100%;
+            height: 5px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 16px;
+        }
+        .loader-fill {
+            height: 100%;
+            width: 0%;
+            background: #16a34a;
+            animation: loadProgress 1.4s linear forwards;
+        }
+        @keyframes loadProgress {
+            to { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <div class="badge">आपले सरकार सेवा केंद्र • CSC • Bank of Maharashtra CSP</div>
-    <h1>लोटस कॉम्प्युटर इन्स्टिट्यूट आणि सीएससी सेंटर</h1>
-    <div class="sub">झेड. पी. मराठी शाळेसमोर, अजंग, ता. मालेगाव, जि. नाशिक</div>
-
-    <div class="stars">★★★★★</div>
-    <div class="instruction">खालीलपैकी एक अभिप्राय (Review) निवडा:</div>
-
-    <div class="review-list" id="reviewList">
-        <div class="review-option active" onclick="selectReview(this)">
-            अजंग गावातील सर्वोत्कृष्ट CSC आणि आपले सरकार सेवा केंद्र! येथे सर्व सरकारी योजनांचे अर्ज, पॅन कार्ड, आधार अपडेट आणि बँक ऑफ महाराष्ट्र CSP चे काम अत्यंत जलद व विश्वासार्ह पद्धतीने केले जाते. उत्तम सेवा!
-        </div>
-        <div class="review-option" onclick="selectReview(this)">
-            लोटस कॉम्प्युटर इन्स्टिट्यूट आणि सीएससी सेंटरमध्ये खूप छान आणि तत्पर सेवा मिळते. सर्व ऑनलाइन कामे अचूक आणि वेळेत पूर्ण होतात. स्टाफ खूप सहकार्य करणारा आहे. नक्की भेट द्या!
-        </div>
-        <div class="review-option" onclick="selectReview(this)">
-            सर्व प्रकारचे दाखले, शैक्षणिक फॉर्म, पीव्हीसी कार्ड प्रिंटिंग आणि बँकिंग व्यवहारांसाठी अजंगमधील सर्वात विश्वसनीय ठिकाण. खूप समाधानकारक अनुभव!
-        </div>
-        <div class="review-option" onclick="selectReview(this)">
-            खूप चांगली आणि जलद ऑनलाइन सर्व्हिस! सरकारी कामे कोणत्याही त्रासाशिवाय एकाच छताखाली पूर्ण होतात. मनापासून धन्यवाद!
-        </div>
+<div class="container">
+    <div class="header">
+        <div class="services-pill">आपले सरकार सेवा केंद्र • CSC • Bank of Maharashtra CSP</div>
+        <h1>लोटस कॉम्प्युटर इन्स्टिट्यूट आणि सीएससी सेंटर</h1>
+        <p>झेड. पी. मराठी शाळेसमोर, अजंग, ता. मालेगाव, जि. नाशिक</p>
+        <div class="stars-row">★★★★★</div>
     </div>
 
-    <button class="btn-main" onclick="copyAndOpenGoogle()">
-        📋 रिव्ह्यू कॉपी करा आणि गुगलवर पेस्ट करा
-    </button>
+    <div class="content">
+        <div class="prompt-box">
+            <div class="prompt-title">कोणत्याही एका रिव्ह्यूवर टॅप (Click) करा</div>
+            <div class="prompt-sub">रिव्ह्यू आपोआप कॉपी होईल आणि थेट गुगल पेज उघडेल</div>
+        </div>
 
-    <div class="steps-box">
-        <strong>फक्त ३ सोप्या पायऱ्या:</strong><br>
-        १. वरील हिरव्या बटणावर क्लिक करा (रिव्ह्यू आपोआप कॉपी होईल).<br>
-        २. गुगल पेज उघडल्यावर <strong>५ स्टार (★★★★★)</strong> निवडा.<br>
-        ३. बॉक्समध्ये बोट दाबून धरून <strong>Paste (पेस्ट)</strong> करा आणि <strong>Post</strong> करा!
-    </div>
+        <div class="review-cards">
+            <!-- रिव्ह्यू १ -->
+            <div class="review-card" onclick="selectAndRedirect(this)">
+                <div class="review-text">अजंग गावातील सर्वोत्कृष्ट CSC आणि आपले सरकार सेवा केंद्र! येथे सर्व सरकारी योजनांचे अर्ज, पॅन कार्ड, आधार अपडेट आणि बँक ऑफ महाराष्ट्र CSP चे काम अत्यंत जलद व विश्वासार्ह पद्धतीने केले जाते. उत्तम सेवा!</div>
+                <div class="card-footer">
+                    <span class="mini-stars">★★★★★</span>
+                    <span class="tap-badge">👆 कॉपी करा आणि गुगल उघडा</span>
+                </div>
+            </div>
 
-    <!-- दुकानात लावण्यासाठी QR कोड -->
-    <div class="admin-qr">
-        <p><strong>केंद्रावर लावण्यासाठी QR कोड:</strong></p>
-        <img id="qrImage" alt="QR Code">
-        <br>
-        <button class="btn-dl" onclick="downloadQR()">⬇️ हा QR कोड डाउनलोड करा</button>
+            <!-- रिव्ह्यू २ -->
+            <div class="review-card" onclick="selectAndRedirect(this)">
+                <div class="review-text">लोटस कॉम्प्युटर इन्स्टिट्यूट आणि सीएससी सेंटरमध्ये खूप छान आणि तत्पर सेवा मिळते. सर्व ऑनलाइन कामे अचूक आणि वेळेत पूर्ण होतात. स्टाफ खूप सहकार्य करणारा आहे. नक्की भेट द्या!</div>
+                <div class="card-footer">
+                    <span class="mini-stars">★★★★★</span>
+                    <span class="tap-badge">👆 कॉपी करा आणि गुगल उघडा</span>
+                </div>
+            </div>
+
+            <!-- रिव्ह्यू ३ -->
+            <div class="review-card" onclick="selectAndRedirect(this)">
+                <div class="review-text">सर्व प्रकारचे दाखले, शैक्षणिक फॉर्म, पीव्हीसी कार्ड प्रिंटिंग आणि बँकिंग व्यवहारांसाठी अजंगमधील सर्वात विश्वसनीय ठिकाण. खूप समाधानकारक अनुभव!</div>
+                <div class="card-footer">
+                    <span class="mini-stars">★★★★★</span>
+                    <span class="tap-badge">👆 कॉपी करा आणि गुगल उघडा</span>
+                </div>
+            </div>
+
+            <!-- रिव्ह्यू ४ -->
+            <div class="review-card" onclick="selectAndRedirect(this)">
+                <div class="review-text">खूप चांगली आणि जलद ऑनलाइन सर्व्हिस! सरकारी कामे कोणत्याही त्रासाशिवाय एकाच छताखाली पूर्ण होतात. मनापासून धन्यवाद!</div>
+                <div class="card-footer">
+                    <span class="mini-stars">★★★★★</span>
+                    <span class="tap-badge">👆 कॉपी करा आणि गुगल उघडा</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-footer">
+            <div class="guide-icon">💡</div>
+            <div>
+                <strong>पुढील सोपी कृती:</strong> गुगल पेज उघडल्यावर <strong>५ स्टार (★★★★★)</strong> निवडा, कमेंट बॉक्समध्ये बोट दाबून <strong>Paste (पेस्ट)</strong> करा आणि <strong>Post</strong> दाबा!
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="toast" id="toast">✅ रिव्ह्यू कॉपी झाला! आता गुगलवर Paste करा...</div>
+<!-- ऑटो कॉपी व रीडायरेक्ट पॉपअप -->
+<div class="redirect-overlay" id="redirectOverlay">
+    <div class="overlay-card">
+        <div class="check-circle">✓</div>
+        <h2>रिव्ह्यू कॉपी झाला आहे!</h2>
+        <p>आता गुगल पेज उघडत आहे...<br>तिथे फक्त <strong>Paste (पेस्ट)</strong> करा.</p>
+        <div class="loader-bar">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+</div>
 
 <script>
-    // तुमची मूळ Google Review लिंक
     const GOOGLE_REVIEW_URL = "https://g.page/r/CUrbQmMDlvc5ECk/review";
+    let isRedirecting = false;
 
-    function selectReview(el) {
-        document.querySelectorAll('.review-option').forEach(item => item.classList.remove('active'));
-        el.classList.add('active');
-    }
+    function selectAndRedirect(cardElement) {
+        if (isRedirecting) return;
+        isRedirecting = true;
 
-    function copyAndOpenGoogle() {
-        const activeReview = document.querySelector('.review-option.active').innerText.trim();
+        // कार्ड हायलाईट करणे
+        document.querySelectorAll('.review-card').forEach(c => c.classList.remove('selected'));
+        cardElement.classList.add('selected');
+        cardElement.querySelector('.tap-badge').innerText = "✓ कॉपी झाले!";
 
+        // रिव्ह्यू मजकूर काढणे
+        const reviewText = cardElement.querySelector('.review-text').innerText.trim();
+
+        // क्लिपबोर्डवर कॉपी करणे
         if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(activeReview).then(() => {
-                showToastAndRedirect();
+            navigator.clipboard.writeText(reviewText).then(() => {
+                triggerRedirect();
             }).catch(() => {
-                fallbackCopy(activeReview);
+                fallbackCopy(reviewText);
             });
         } else {
-            fallbackCopy(activeReview);
+            fallbackCopy(reviewText);
         }
     }
 
     function fallbackCopy(text) {
         const textArea = document.createElement("textarea");
         textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
         document.body.appendChild(textArea);
+        textArea.focus();
         textArea.select();
-        document.execCommand("copy");
+        try {
+            document.execCommand('copy');
+        } catch (err) {}
         document.body.removeChild(textArea);
-        showToastAndRedirect();
+        triggerRedirect();
     }
 
-    function showToastAndRedirect() {
-        const toast = document.getElementById("toast");
-        toast.style.display = "block";
+    function triggerRedirect() {
+        document.getElementById("redirectOverlay").style.display = "flex";
         setTimeout(() => {
             window.location.href = GOOGLE_REVIEW_URL;
-        }, 1200);
-    }
-
-    // या पेजच्या लिंकचा QR कोड आपोआप तयार करणे
-    const currentUrl = window.location.href;
-    const qrApi = `https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${encodeURIComponent(currentUrl)}`;
-    document.getElementById("qrImage").src = qrApi;
-
-    async function downloadQR() {
-        const response = await fetch(qrApi);
-        const blob = await response.blob();
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "Lotus-CSC-Review-QR.png";
-        a.click();
+        }, 1400);
     }
 </script>
 
